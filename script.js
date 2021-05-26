@@ -13,8 +13,10 @@ function VypocitejCenu() {
     Vysledek=0;  
     for (var i = 0; i < KolaPoleCheckbox.length; i++) {
         if (KolaPoleCheckbox[i].checked) {
-            Cena+=parseInt(KolaPoleCheckbox[i].getAttribute("data-price"));
-            Vysledek=Cena*PocetDnu*PocetKusuPole[i];
+            Cena=parseInt(KolaPoleCheckbox[i].getAttribute("data-price"));
+            var cenaAPocetDnu= Cena*PocetDnu;
+            Vysledek+=cenaAPocetDnu*PocetKusuPole[i];
+            console.log(PocetKusuPole[i]);
         }
     }
     VypocetPrirazkaPrislusenstvi();
